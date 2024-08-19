@@ -1,0 +1,1090 @@
+15:37:39,768 graphrag.config.read_dotenv INFO Loading pipeline .env file
+15:37:39,781 graphrag.index.cli INFO using default configuration: {
+    "llm": {
+        "api_key": "REDACTED, length 36",
+        "type": "azure_openai_chat",
+        "model": "gpt-4o",
+        "max_tokens": 4000,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "request_timeout": 180.0,
+        "api_base": "https://api.nlp.dev.uptimize.merckgroup.com",
+        "api_version": "2023-09-01-preview",
+        "proxy": null,
+        "cognitive_services_endpoint": null,
+        "deployment_name": "gpt-4o",
+        "model_supports_json": true,
+        "tokens_per_minute": 0,
+        "requests_per_minute": 0,
+        "max_retries": 10,
+        "max_retry_wait": 10.0,
+        "sleep_on_rate_limit_recommendation": true,
+        "concurrent_requests": 25
+    },
+    "parallelization": {
+        "stagger": 0.3,
+        "num_threads": 50
+    },
+    "async_mode": "threaded",
+    "root_dir": "C:\\Users\\M293906\\VirtualBox VMs\\Ubuntu\\Share\\GitHub\\bm_wukong_graphrag\\graphRAG",
+    "reporting": {
+        "type": "file",
+        "base_dir": "output/${timestamp}/reports",
+        "storage_account_blob_url": null
+    },
+    "storage": {
+        "type": "file",
+        "base_dir": "output/${timestamp}/artifacts",
+        "storage_account_blob_url": null
+    },
+    "cache": {
+        "type": "file",
+        "base_dir": "cache",
+        "storage_account_blob_url": null
+    },
+    "input": {
+        "type": "file",
+        "file_type": "text",
+        "base_dir": "input",
+        "storage_account_blob_url": null,
+        "encoding": "utf-8",
+        "file_pattern": ".*\\.txt$",
+        "file_filter": null,
+        "source_column": null,
+        "timestamp_column": null,
+        "timestamp_format": null,
+        "text_column": "text",
+        "title_column": null,
+        "document_attribute_columns": []
+    },
+    "embed_graph": {
+        "enabled": false,
+        "num_walks": 10,
+        "walk_length": 40,
+        "window_size": 2,
+        "iterations": 3,
+        "random_seed": 597832,
+        "strategy": null
+    },
+    "embeddings": {
+        "llm": {
+            "api_key": "REDACTED, length 36",
+            "type": "azure_openai_embedding",
+            "model": "text-embedding-3-large",
+            "max_tokens": 4000,
+            "temperature": 0,
+            "top_p": 1,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "https://api.nlp.dev.uptimize.merckgroup.com",
+            "api_version": "2023-09-01-preview",
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": "text-embedding-3-large",
+            "model_supports_json": null,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "batch_size": 16,
+        "batch_max_tokens": 8191,
+        "target": "required",
+        "skip": [],
+        "vector_store": null,
+        "strategy": null
+    },
+    "chunks": {
+        "size": 1200,
+        "overlap": 100,
+        "group_by_columns": [
+            "id"
+        ],
+        "strategy": null,
+        "encoding_model": null
+    },
+    "snapshots": {
+        "graphml": false,
+        "raw_entities": false,
+        "top_level_nodes": false
+    },
+    "entity_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 36",
+            "type": "azure_openai_chat",
+            "model": "gpt-4o",
+            "max_tokens": 4000,
+            "temperature": 0.0,
+            "top_p": 1.0,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "https://api.nlp.dev.uptimize.merckgroup.com",
+            "api_version": "2023-09-01-preview",
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": "gpt-4o",
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "custom_prompts/entity_extraction.txt",
+        "entity_types": [
+            "organization",
+            "person",
+            "geo",
+            "event"
+        ],
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "summarize_descriptions": {
+        "llm": {
+            "api_key": "REDACTED, length 36",
+            "type": "azure_openai_chat",
+            "model": "gpt-4o",
+            "max_tokens": 4000,
+            "temperature": 0.0,
+            "top_p": 1.0,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "https://api.nlp.dev.uptimize.merckgroup.com",
+            "api_version": "2023-09-01-preview",
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": "gpt-4o",
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "custom_prompts/summarize_descriptions.txt",
+        "max_length": 500,
+        "strategy": null
+    },
+    "community_reports": {
+        "llm": {
+            "api_key": "REDACTED, length 36",
+            "type": "azure_openai_chat",
+            "model": "gpt-4o",
+            "max_tokens": 4000,
+            "temperature": 0.0,
+            "top_p": 1.0,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "https://api.nlp.dev.uptimize.merckgroup.com",
+            "api_version": "2023-09-01-preview",
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": "gpt-4o",
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "prompt": "custom_prompts/community_report.txt",
+        "max_length": 2000,
+        "max_input_length": 8000,
+        "strategy": null
+    },
+    "claim_extraction": {
+        "llm": {
+            "api_key": "REDACTED, length 36",
+            "type": "azure_openai_chat",
+            "model": "gpt-4o",
+            "max_tokens": 4000,
+            "temperature": 0.0,
+            "top_p": 1.0,
+            "n": 1,
+            "request_timeout": 180.0,
+            "api_base": "https://api.nlp.dev.uptimize.merckgroup.com",
+            "api_version": "2023-09-01-preview",
+            "proxy": null,
+            "cognitive_services_endpoint": null,
+            "deployment_name": "gpt-4o",
+            "model_supports_json": true,
+            "tokens_per_minute": 0,
+            "requests_per_minute": 0,
+            "max_retries": 10,
+            "max_retry_wait": 10.0,
+            "sleep_on_rate_limit_recommendation": true,
+            "concurrent_requests": 25
+        },
+        "parallelization": {
+            "stagger": 0.3,
+            "num_threads": 50
+        },
+        "async_mode": "threaded",
+        "enabled": true,
+        "prompt": "prompts/claim_extraction.txt",
+        "description": "Any claims or facts that could be relevant to information discovery.",
+        "max_gleanings": 1,
+        "strategy": null,
+        "encoding_model": null
+    },
+    "cluster_graph": {
+        "max_cluster_size": 10,
+        "strategy": null
+    },
+    "umap": {
+        "enabled": false
+    },
+    "local_search": {
+        "text_unit_prop": 0.5,
+        "community_prop": 0.1,
+        "conversation_history_max_turns": 5,
+        "top_k_entities": 10,
+        "top_k_relationships": 10,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "llm_max_tokens": 2000
+    },
+    "global_search": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "n": 1,
+        "max_tokens": 12000,
+        "data_max_tokens": 12000,
+        "map_max_tokens": 1000,
+        "reduce_max_tokens": 2000,
+        "concurrency": 32
+    },
+    "encoding_model": "cl100k_base",
+    "skip_workflows": []
+}
+15:37:39,787 graphrag.index.create_pipeline_config INFO skipping workflows 
+15:37:39,790 graphrag.index.run INFO Running pipeline
+15:37:39,790 graphrag.index.storage.file_pipeline_storage INFO Creating file storage at C:\Users\M293906\VirtualBox VMs\Ubuntu\Share\GitHub\bm_wukong_graphrag\graphRAG\output\20240819-153739\artifacts
+15:37:39,794 graphrag.index.input.load_input INFO loading input from root_dir=input
+15:37:39,794 graphrag.index.input.load_input INFO using file storage for input
+15:37:39,797 graphrag.index.storage.file_pipeline_storage INFO search C:\Users\M293906\VirtualBox VMs\Ubuntu\Share\GitHub\bm_wukong_graphrag\graphRAG\input for files matching .*\.txt$
+15:37:39,799 graphrag.index.input.text INFO found text files from input, found [('人物.txt', {}), ('作品.txt', {}), ('剧情.txt', {}), ('地理.txt', {}), ('多义性.txt', {}), ('总述.txt', {}), ('理念.txt', {})]
+15:37:39,817 graphrag.index.input.text INFO Found 7 files, loading 7
+15:37:39,819 graphrag.index.workflows.load INFO Workflow Run Order: ['create_base_text_units', 'create_base_extracted_entities', 'create_final_covariates', 'create_summarized_entities', 'join_text_units_to_covariate_ids', 'create_base_entity_graph', 'create_final_entities', 'create_final_nodes', 'create_final_communities', 'join_text_units_to_entity_ids', 'create_final_relationships', 'join_text_units_to_relationship_ids', 'create_final_community_reports', 'create_final_text_units', 'create_base_documents', 'create_final_documents']
+15:37:39,820 graphrag.index.run INFO Final # of rows loaded: 7
+15:37:39,996 graphrag.index.run INFO Running workflow: create_base_text_units...
+15:37:39,997 graphrag.index.run INFO dependencies for create_base_text_units: []
+15:37:40,5 datashaper.workflow.workflow INFO executing verb orderby
+15:37:40,12 datashaper.workflow.workflow INFO executing verb zip
+15:37:40,19 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:37:40,31 datashaper.workflow.workflow INFO executing verb chunk
+15:37:40,323 datashaper.workflow.workflow INFO executing verb select
+15:37:40,335 datashaper.workflow.workflow INFO executing verb unroll
+15:37:40,351 datashaper.workflow.workflow INFO executing verb rename
+15:37:40,369 datashaper.workflow.workflow INFO executing verb genid
+15:37:40,382 datashaper.workflow.workflow INFO executing verb unzip
+15:37:40,398 datashaper.workflow.workflow INFO executing verb copy
+15:37:40,413 datashaper.workflow.workflow INFO executing verb filter
+15:37:40,457 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_text_units.parquet
+15:37:40,881 graphrag.index.run INFO Running workflow: create_base_extracted_entities...
+15:37:40,882 graphrag.index.run INFO dependencies for create_base_extracted_entities: ['create_base_text_units']
+15:37:40,884 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+15:37:40,935 datashaper.workflow.workflow INFO executing verb entity_extract
+15:37:40,952 graphrag.llm.openai.create_openai_client INFO Creating Azure OpenAI client api_base=https://api.nlp.dev.uptimize.merckgroup.com, deployment_name=gpt-4o
+15:37:40,989 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for gpt-4o: TPM=0, RPM=0
+15:37:40,989 graphrag.index.llm.load_llm INFO create concurrency limiter for gpt-4o: 25
+15:37:50,190 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:37:50,193 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 9.0. input_tokens=34, output_tokens=376
+15:38:03,393 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:03,395 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 22.20299999997951. input_tokens=34, output_tokens=891
+15:38:10,89 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:10,92 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 28.92200000002049. input_tokens=34, output_tokens=1296
+15:38:17,704 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:17,707 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 36.56200000003446. input_tokens=34, output_tokens=2079
+15:38:19,496 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:19,500 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 38.34400000004098. input_tokens=34, output_tokens=1848
+15:38:30,638 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:30,644 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 49.60999999998603. input_tokens=10241, output_tokens=2583
+15:38:37,659 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:37,665 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 56.561999999918044. input_tokens=10242, output_tokens=3584
+15:38:46,729 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:46,737 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 65.68799999996554. input_tokens=10241, output_tokens=3432
+15:38:54,292 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:54,298 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 73.21900000004098. input_tokens=10241, output_tokens=4032
+15:38:59,855 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:38:59,864 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 78.79700000002049. input_tokens=10241, output_tokens=4045
+15:39:07,751 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:07,759 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 86.67200000002049. input_tokens=10242, output_tokens=5065
+15:39:12,486 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:12,488 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 18.18799999996554. input_tokens=34, output_tokens=949
+15:39:14,274 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:14,279 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 43.625. input_tokens=34, output_tokens=2148
+15:39:16,603 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:16,607 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 29.85999999998603. input_tokens=34, output_tokens=1627
+15:39:35,254 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:35,258 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 35.375. input_tokens=34, output_tokens=1766
+15:39:52,961 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:52,966 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 45.203000000095926. input_tokens=34, output_tokens=2550
+15:39:56,672 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:39:56,680 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 79.0. input_tokens=34, output_tokens=5037
+15:40:42,21 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': 'MANY entities and relationships were missed in the last extraction. Remember to ONLY emit entities that match any of the previously extracted types. Add them below using the same format:\n'}
+15:41:27,995 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:27,997 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 1 retries took 44.40700000000652. input_tokens=34, output_tokens=1989
+15:41:28,26 datashaper.workflow.workflow INFO executing verb merge_graphs
+15:41:28,119 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_extracted_entities.parquet
+15:41:28,338 graphrag.index.run INFO Running workflow: create_final_covariates...
+15:41:28,338 graphrag.index.run INFO dependencies for create_final_covariates: ['create_base_text_units']
+15:41:28,339 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+15:41:28,367 datashaper.workflow.workflow INFO executing verb extract_covariates
+15:41:30,111 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:30,114 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 1.7190000000409782. input_tokens=1241, output_tokens=35
+15:41:30,508 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:30,510 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 2.047000000020489. input_tokens=2314, output_tokens=5
+15:41:30,817 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:30,819 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 2.343999999924563. input_tokens=1606, output_tokens=38
+15:41:30,821 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:30,823 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 2.2820000000065193. input_tokens=1158, output_tokens=25
+15:41:31,212 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:31,214 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 2.672000000020489. input_tokens=1167, output_tokens=45
+15:41:31,561 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:31,563 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 3.031000000075437. input_tokens=1134, output_tokens=39
+15:41:33,144 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:33,146 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 4.625. input_tokens=1977, output_tokens=160
+15:41:35,635 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:35,637 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 4.047000000020489. input_tokens=19, output_tokens=104
+15:41:35,690 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:35,692 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 5.577999999979511. input_tokens=19, output_tokens=265
+15:41:36,329 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:36,331 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 5.108999999938533. input_tokens=19, output_tokens=151
+15:41:36,436 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:36,438 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 5.594000000040978. input_tokens=19, output_tokens=320
+15:41:44,274 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:44,277 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 15.780999999959022. input_tokens=2315, output_tokens=704
+15:41:44,615 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:44,617 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 16.125. input_tokens=1311, output_tokens=695
+15:41:44,975 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:44,977 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 16.563000000081956. input_tokens=2314, output_tokens=1189
+15:41:45,411 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:45,413 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 16.96799999999348. input_tokens=2313, output_tokens=1100
+15:41:46,74 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:46,76 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 17.640999999945052. input_tokens=2314, output_tokens=716
+15:41:46,933 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:46,936 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 18.5. input_tokens=2314, output_tokens=606
+15:41:47,788 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:47,790 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 19.280999999959022. input_tokens=2313, output_tokens=871
+15:41:48,836 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:48,838 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 20.42200000002049. input_tokens=2314, output_tokens=1474
+15:41:53,309 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:53,311 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 24.859000000054948. input_tokens=2315, output_tokens=687
+15:41:53,383 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:53,385 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 24.92200000002049. input_tokens=2315, output_tokens=1550
+15:41:53,445 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:53,448 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 22.625. input_tokens=19, output_tokens=1066
+15:41:57,710 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:41:57,712 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 29.20299999997951. input_tokens=2315, output_tokens=1162
+15:42:01,4 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:01,6 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 16.39000000001397. input_tokens=19, output_tokens=1110
+15:42:08,423 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:08,427 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "Process" with 0 retries took 40.03100000007544. input_tokens=2315, output_tokens=1857
+15:42:08,694 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:08,697 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 20.90700000000652. input_tokens=19, output_tokens=1355
+15:42:11,992 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:11,994 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 25.92200000002049. input_tokens=19, output_tokens=1030
+15:42:18,107 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:18,109 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 29.266000000061467. input_tokens=19, output_tokens=1328
+15:42:19,670 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:19,672 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 21.95299999997951. input_tokens=19, output_tokens=1385
+15:42:28,455 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:28,457 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 35.125. input_tokens=19, output_tokens=2052
+15:42:30,758 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:30,760 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 45.34400000004098. input_tokens=19, output_tokens=2844
+15:42:32,933 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:32,935 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 48.65600000007544. input_tokens=19, output_tokens=2246
+15:42:35,813 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:35,816 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 42.42200000002049. input_tokens=19, output_tokens=2913
+15:42:38,141 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:38,144 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 64.98400000005495. input_tokens=19, output_tokens=3833
+15:42:50,115 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:50,117 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 41.67200000002049. input_tokens=19, output_tokens=2516
+15:42:59,454 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:42:59,455 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 74.46899999992456. input_tokens=19, output_tokens=1812
+15:43:03,925 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:03,928 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 93.40599999995902. input_tokens=19, output_tokens=5135
+15:43:15,429 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:15,434 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "extract-continuation-0" with 0 retries took 88.46799999999348. input_tokens=19, output_tokens=4727
+15:43:15,452 datashaper.workflow.workflow INFO executing verb window
+15:43:15,459 datashaper.workflow.workflow INFO executing verb genid
+15:43:15,466 datashaper.workflow.workflow INFO executing verb convert
+15:43:15,485 datashaper.workflow.workflow INFO executing verb rename
+15:43:15,497 datashaper.workflow.workflow INFO executing verb select
+15:43:15,500 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_covariates.parquet
+15:43:15,710 graphrag.index.run INFO Running workflow: create_summarized_entities...
+15:43:15,710 graphrag.index.run INFO dependencies for create_summarized_entities: ['create_base_extracted_entities']
+15:43:15,711 graphrag.index.run INFO read table from storage: create_base_extracted_entities.parquet
+15:43:15,734 datashaper.workflow.workflow INFO executing verb summarize_descriptions
+15:43:18,14 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,15 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.155999999959022. input_tokens=346, output_tokens=29
+15:43:18,152 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,153 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.23499999998603. input_tokens=428, output_tokens=35
+15:43:18,167 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,168 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.280999999959022. input_tokens=429, output_tokens=65
+15:43:18,192 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,193 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.234000000054948. input_tokens=444, output_tokens=34
+15:43:18,255 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,257 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.3290000000270084. input_tokens=341, output_tokens=34
+15:43:18,288 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,289 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.390999999945052. input_tokens=421, output_tokens=56
+15:43:18,306 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,307 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.3910000000614673. input_tokens=364, output_tokens=44
+15:43:18,397 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,398 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.452999999979511. input_tokens=418, output_tokens=56
+15:43:18,457 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,458 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.593999999924563. input_tokens=492, output_tokens=76
+15:43:18,614 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,615 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.7030000000959262. input_tokens=606, output_tokens=82
+15:43:18,616 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,620 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.672000000020489. input_tokens=367, output_tokens=46
+15:43:18,644 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,645 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.76500000001397. input_tokens=547, output_tokens=90
+15:43:18,671 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,671 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,672 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.780999999959022. input_tokens=426, output_tokens=54
+15:43:18,673 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.76500000001397. input_tokens=415, output_tokens=57
+15:43:18,857 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,857 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,858 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,859 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.9530000000959262. input_tokens=441, output_tokens=38
+15:43:18,860 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.922000000020489. input_tokens=484, output_tokens=61
+15:43:18,861 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.9380000000819564. input_tokens=449, output_tokens=84
+15:43:18,912 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:18,913 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.030999999959022. input_tokens=447, output_tokens=75
+15:43:19,87 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,88 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.172000000020489. input_tokens=500, output_tokens=109
+15:43:19,168 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,169 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.2959999999729916. input_tokens=480, output_tokens=88
+15:43:19,335 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,336 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.437999999965541. input_tokens=423, output_tokens=56
+15:43:19,639 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,640 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.702999999979511. input_tokens=568, output_tokens=149
+15:43:19,677 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,678 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.7339999999385327. input_tokens=611, output_tokens=75
+15:43:19,778 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,779 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.765999999945052. input_tokens=422, output_tokens=68
+15:43:19,918 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,919 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.5309999999590218. input_tokens=332, output_tokens=38
+15:43:19,927 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,928 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.4679999999934807. input_tokens=328, output_tokens=31
+15:43:19,953 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,954 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3439999999245629. input_tokens=354, output_tokens=39
+15:43:19,980 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:19,981 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3130000000819564. input_tokens=375, output_tokens=34
+15:43:20,20 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,21 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.8440000000409782. input_tokens=422, output_tokens=69
+15:43:20,35 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,36 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.1719999999040738. input_tokens=319, output_tokens=28
+15:43:20,70 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,71 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.812000000034459. input_tokens=413, output_tokens=59
+15:43:20,149 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,150 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,150 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.859000000054948. input_tokens=518, output_tokens=59
+15:43:20,152 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 4.202999999979511. input_tokens=737, output_tokens=134
+15:43:20,268 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,269 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.109000000054948. input_tokens=471, output_tokens=82
+15:43:20,401 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,401 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.093999999924563. input_tokens=508, output_tokens=63
+15:43:20,424 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,425 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.7959999999729916. input_tokens=367, output_tokens=48
+15:43:20,465 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,466 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.797000000020489. input_tokens=371, output_tokens=29
+15:43:20,516 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,517 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3440000000409782. input_tokens=334, output_tokens=35
+15:43:20,616 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,617 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.75. input_tokens=396, output_tokens=51
+15:43:20,697 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,698 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.375. input_tokens=355, output_tokens=40
+15:43:20,803 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,804 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.9369999999180436. input_tokens=509, output_tokens=56
+15:43:20,928 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:20,928 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.827999999979511. input_tokens=347, output_tokens=39
+15:43:21,51 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,52 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.375. input_tokens=397, output_tokens=59
+15:43:21,129 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,130 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2040000000270084. input_tokens=442, output_tokens=54
+15:43:21,173 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,174 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.1559999999590218. input_tokens=344, output_tokens=37
+15:43:21,324 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,325 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.687999999965541. input_tokens=418, output_tokens=49
+15:43:21,413 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,414 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3439999999245629. input_tokens=408, output_tokens=52
+15:43:21,451 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,452 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.547000000020489. input_tokens=726, output_tokens=110
+15:43:21,597 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,599 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 5.717999999993481. input_tokens=1549, output_tokens=358
+15:43:21,733 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,734 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2190000000409782. input_tokens=361, output_tokens=44
+15:43:21,738 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,739 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.4690000000409782. input_tokens=347, output_tokens=41
+15:43:21,754 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,755 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.8290000000270084. input_tokens=389, output_tokens=50
+15:43:21,790 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,791 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.312999999965541. input_tokens=351, output_tokens=43
+15:43:21,941 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:21,942 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 0.8910000000614673. input_tokens=333, output_tokens=16
+15:43:22,46 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,46 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.8900000000139698. input_tokens=435, output_tokens=77
+15:43:22,144 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,145 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2190000000409782. input_tokens=339, output_tokens=28
+15:43:22,165 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,166 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.125. input_tokens=498, output_tokens=87
+15:43:22,460 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,461 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2820000000065193. input_tokens=375, output_tokens=50
+15:43:22,637 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,638 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.047000000020489. input_tokens=312, output_tokens=24
+15:43:22,668 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,669 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2179999999934807. input_tokens=341, output_tokens=30
+15:43:22,706 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,707 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.75. input_tokens=497, output_tokens=105
+15:43:22,904 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,905 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,905 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,906 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.1559999999590218. input_tokens=350, output_tokens=38
+15:43:22,907 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.7809999999590218. input_tokens=367, output_tokens=43
+15:43:22,908 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.125. input_tokens=345, output_tokens=38
+15:43:22,978 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:22,979 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.281000000075437. input_tokens=377, output_tokens=42
+15:43:23,23 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,24 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2809999999590218. input_tokens=381, output_tokens=48
+15:43:23,104 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,105 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.172000000020489. input_tokens=307, output_tokens=22
+15:43:23,201 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,202 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.422000000020489. input_tokens=418, output_tokens=59
+15:43:23,218 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,220 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.4839999999385327. input_tokens=382, output_tokens=31
+15:43:23,224 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,225 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.422000000020489. input_tokens=363, output_tokens=40
+15:43:23,285 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,286 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.6719999999040738. input_tokens=380, output_tokens=57
+15:43:23,354 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,355 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.9530000000959262. input_tokens=513, output_tokens=81
+15:43:23,363 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,366 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3130000000819564. input_tokens=341, output_tokens=34
+15:43:23,395 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,397 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.25. input_tokens=336, output_tokens=31
+15:43:23,634 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,635 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 0.9540000000270084. input_tokens=340, output_tokens=33
+15:43:23,717 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,718 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.7339999999385327. input_tokens=613, output_tokens=156
+15:43:23,726 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,727 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.077999999979511. input_tokens=340, output_tokens=31
+15:43:23,810 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,811 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.109000000054948. input_tokens=337, output_tokens=20
+15:43:23,877 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:23,878 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.4540000000270084. input_tokens=374, output_tokens=44
+15:43:24,122 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,123 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2190000000409782. input_tokens=335, output_tokens=31
+15:43:24,300 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,301 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.077999999979511. input_tokens=339, output_tokens=33
+15:43:24,409 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,410 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.125. input_tokens=349, output_tokens=42
+15:43:24,429 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,430 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 5.780999999959022. input_tokens=378, output_tokens=56
+15:43:24,435 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,437 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.452999999979511. input_tokens=381, output_tokens=38
+15:43:24,460 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,461 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2349999999860302. input_tokens=353, output_tokens=39
+15:43:24,561 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,563 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.359000000054948. input_tokens=361, output_tokens=42
+15:43:24,615 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,616 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.281000000075437. input_tokens=428, output_tokens=91
+15:43:24,793 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,794 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.077999999979511. input_tokens=331, output_tokens=27
+15:43:24,848 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,849 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.452999999979511. input_tokens=370, output_tokens=34
+15:43:24,885 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,886 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.984000000054948. input_tokens=360, output_tokens=38
+15:43:24,940 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,941 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.062000000034459. input_tokens=387, output_tokens=28
+15:43:24,959 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,960 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.327999999979511. input_tokens=356, output_tokens=37
+15:43:24,987 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:24,988 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2660000000614673. input_tokens=346, output_tokens=38
+15:43:25,100 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,101 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.7339999999385327. input_tokens=414, output_tokens=33
+15:43:25,117 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,118 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.2030000000959262. input_tokens=359, output_tokens=39
+15:43:25,123 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,124 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 4.969000000040978. input_tokens=1053, output_tokens=259
+15:43:25,133 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,135 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.0. input_tokens=359, output_tokens=35
+15:43:25,236 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,237 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.0630000000819564. input_tokens=351, output_tokens=37
+15:43:25,463 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,464 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,465 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.0309999999590218. input_tokens=375, output_tokens=29
+15:43:25,466 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.0150000000139698. input_tokens=364, output_tokens=22
+15:43:25,522 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,523 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2190000000409782. input_tokens=365, output_tokens=36
+15:43:25,531 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,532 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 5.125. input_tokens=365, output_tokens=53
+15:43:25,704 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,705 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,705 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.297000000020489. input_tokens=380, output_tokens=44
+15:43:25,706 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.343999999924563. input_tokens=370, output_tokens=37
+15:43:25,779 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,780 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.6719999999040738. input_tokens=369, output_tokens=54
+15:43:25,818 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,818 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.202999999979511. input_tokens=363, output_tokens=35
+15:43:25,822 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,823 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 0.9849999999860302. input_tokens=330, output_tokens=30
+15:43:25,836 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,837 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 0.9379999999655411. input_tokens=335, output_tokens=25
+15:43:25,865 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,866 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 0.9220000000204891. input_tokens=333, output_tokens=21
+15:43:25,981 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:25,982 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.5630000000819564. input_tokens=392, output_tokens=50
+15:43:26,57 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,58 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.2660000000614673. input_tokens=379, output_tokens=52
+15:43:26,272 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,274 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.702999999979511. input_tokens=397, output_tokens=55
+15:43:26,301 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,302 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.1709999999729916. input_tokens=331, output_tokens=29
+15:43:26,470 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,471 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3589999999385327. input_tokens=410, output_tokens=52
+15:43:26,521 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,522 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.5309999999590218. input_tokens=327, output_tokens=30
+15:43:26,585 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,586 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.062999999965541. input_tokens=368, output_tokens=37
+15:43:26,608 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,609 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.5160000000614673. input_tokens=327, output_tokens=20
+15:43:26,632 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,633 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.0790000000270084. input_tokens=353, output_tokens=20
+15:43:26,922 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,923 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.0619999999180436. input_tokens=365, output_tokens=34
+15:43:26,936 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,937 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.125. input_tokens=363, output_tokens=51
+15:43:26,986 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:26,986 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.1560000000754371. input_tokens=367, output_tokens=41
+15:43:27,36 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,37 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.7969999999040738. input_tokens=437, output_tokens=75
+15:43:27,167 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,168 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.702999999979511. input_tokens=483, output_tokens=68
+15:43:27,397 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,398 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.125. input_tokens=365, output_tokens=22
+15:43:27,526 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,527 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.827999999979511. input_tokens=421, output_tokens=58
+15:43:27,562 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,563 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.5. input_tokens=327, output_tokens=34
+15:43:27,629 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,630 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.1570000000065193. input_tokens=370, output_tokens=41
+15:43:27,679 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,681 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.202999999979511. input_tokens=422, output_tokens=74
+15:43:27,691 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,692 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3910000000614673. input_tokens=356, output_tokens=41
+15:43:27,716 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,717 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 5.26500000001397. input_tokens=550, output_tokens=99
+15:43:27,884 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:27,885 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.3599999999860302. input_tokens=328, output_tokens=18
+15:43:28,33 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,34 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.0. input_tokens=342, output_tokens=30
+15:43:28,45 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,46 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.125. input_tokens=331, output_tokens=33
+15:43:28,85 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,86 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.4689999999245629. input_tokens=395, output_tokens=47
+15:43:28,227 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,229 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.609000000054948. input_tokens=373, output_tokens=53
+15:43:28,474 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,476 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 0.9370000000344589. input_tokens=357, output_tokens=20
+15:43:28,601 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,602 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,603 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.202999999979511. input_tokens=357, output_tokens=45
+15:43:28,605 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.469000000040978. input_tokens=607, output_tokens=113
+15:43:28,753 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,754 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.797000000020489. input_tokens=829, output_tokens=224
+15:43:28,845 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,846 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.8589999999385327. input_tokens=376, output_tokens=66
+15:43:28,851 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,852 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 1.9059999999590218. input_tokens=324, output_tokens=72
+15:43:28,900 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:28,902 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 2.312000000034459. input_tokens=326, output_tokens=135
+15:43:29,886 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:29,887 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 6.077999999979511. input_tokens=356, output_tokens=38
+15:43:30,314 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:30,315 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.1410000000614673. input_tokens=343, output_tokens=34
+15:43:30,686 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:30,687 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 4.906000000075437. input_tokens=388, output_tokens=28
+15:43:30,835 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:30,836 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 3.265999999945052. input_tokens=446, output_tokens=83
+15:43:33,220 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:33,222 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 15.030999999959022. input_tokens=590, output_tokens=94
+15:43:34,83 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:34,89 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 8.108999999938533. input_tokens=407, output_tokens=59
+15:43:35,808 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:35,810 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 12.797000000020489. input_tokens=449, output_tokens=40
+15:43:35,914 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:35,915 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 10.202999999979511. input_tokens=392, output_tokens=37
+15:43:36,529 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:36,531 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "summarize" with 0 retries took 10.702999999979511. input_tokens=412, output_tokens=53
+15:43:36,586 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_summarized_entities.parquet
+15:43:36,814 graphrag.index.run INFO Running workflow: join_text_units_to_covariate_ids...
+15:43:36,814 graphrag.index.run INFO dependencies for join_text_units_to_covariate_ids: ['create_final_covariates']
+15:43:36,815 graphrag.index.run INFO read table from storage: create_final_covariates.parquet
+15:43:36,856 datashaper.workflow.workflow INFO executing verb select
+15:43:36,873 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:43:36,884 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table join_text_units_to_covariate_ids.parquet
+15:43:37,114 graphrag.index.run INFO Running workflow: create_base_entity_graph...
+15:43:37,115 graphrag.index.run INFO dependencies for create_base_entity_graph: ['create_summarized_entities']
+15:43:37,115 graphrag.index.run INFO read table from storage: create_summarized_entities.parquet
+15:43:37,156 datashaper.workflow.workflow INFO executing verb cluster_graph
+15:43:37,527 datashaper.workflow.workflow INFO executing verb select
+15:43:37,535 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_entity_graph.parquet
+15:43:37,809 graphrag.index.run INFO Running workflow: create_final_entities...
+15:43:37,809 graphrag.index.run INFO dependencies for create_final_entities: ['create_base_entity_graph']
+15:43:37,810 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+15:43:37,876 datashaper.workflow.workflow INFO executing verb unpack_graph
+15:43:38,64 datashaper.workflow.workflow INFO executing verb rename
+15:43:38,87 datashaper.workflow.workflow INFO executing verb select
+15:43:38,107 datashaper.workflow.workflow INFO executing verb dedupe
+15:43:38,129 datashaper.workflow.workflow INFO executing verb rename
+15:43:38,153 datashaper.workflow.workflow INFO executing verb filter
+15:43:38,214 datashaper.workflow.workflow INFO executing verb text_split
+15:43:38,247 datashaper.workflow.workflow INFO executing verb drop
+15:43:38,268 datashaper.workflow.workflow INFO executing verb merge
+15:43:38,422 datashaper.workflow.workflow INFO executing verb text_embed
+15:43:38,426 graphrag.llm.openai.create_openai_client INFO Creating Azure OpenAI client api_base=https://api.nlp.dev.uptimize.merckgroup.com, deployment_name=text-embedding-3-large
+15:43:38,445 graphrag.index.llm.load_llm INFO create TPM/RPM limiter for text-embedding-3-large: TPM=0, RPM=0
+15:43:38,446 graphrag.index.llm.load_llm INFO create concurrency limiter for text-embedding-3-large: 25
+15:43:38,482 graphrag.index.verbs.text.embed.strategies.openai INFO embedding 523 inputs via 523 snippets using 33 batches. max_batch_size=16, max_tokens=8191
+15:43:41,146 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,148 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,151 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,163 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,194 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,240 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,246 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,251 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,259 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,294 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,357 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,361 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,366 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,376 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,506 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,508 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,520 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,525 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,567 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,575 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,577 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,645 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,792 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,811 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,903 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.4219999999040738. input_tokens=1141, output_tokens=0
+15:43:41,937 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:41,942 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.437000000034459. input_tokens=936, output_tokens=0
+15:43:42,45 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.530999999959022. input_tokens=568, output_tokens=0
+15:43:42,115 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.594000000040978. input_tokens=389, output_tokens=0
+15:43:42,177 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.6869999999180436. input_tokens=479, output_tokens=0
+15:43:42,222 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.7179999999934807. input_tokens=655, output_tokens=0
+15:43:42,337 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.812999999965541. input_tokens=607, output_tokens=0
+15:43:42,386 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.875. input_tokens=698, output_tokens=0
+15:43:42,432 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.9209999999729916. input_tokens=854, output_tokens=0
+15:43:42,499 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 3.969000000040978. input_tokens=384, output_tokens=0
+15:43:42,549 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.045999999972992. input_tokens=1015, output_tokens=0
+15:43:42,594 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.077999999979511. input_tokens=376, output_tokens=0
+15:43:42,667 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.155999999959022. input_tokens=666, output_tokens=0
+15:43:42,715 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.217999999993481. input_tokens=656, output_tokens=0
+15:43:42,783 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.265999999945052. input_tokens=527, output_tokens=0
+15:43:42,825 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.327999999979511. input_tokens=624, output_tokens=0
+15:43:42,892 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.375. input_tokens=168, output_tokens=0
+15:43:42,935 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.437000000034459. input_tokens=880, output_tokens=0
+15:43:42,996 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.48499999998603. input_tokens=554, output_tokens=0
+15:43:43,52 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.545999999972992. input_tokens=589, output_tokens=0
+15:43:43,99 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.592999999993481. input_tokens=521, output_tokens=0
+15:43:43,142 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.64000000001397. input_tokens=595, output_tokens=0
+15:43:43,215 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.702999999979511. input_tokens=260, output_tokens=0
+15:43:43,273 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.75. input_tokens=510, output_tokens=0
+15:43:43,334 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 4.812999999965541. input_tokens=519, output_tokens=0
+15:43:43,590 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:43,727 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:43,878 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:43,934 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.0160000000614673. input_tokens=580, output_tokens=0
+15:43:43,981 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:43,982 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:43,985 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 1.609000000054948. input_tokens=238, output_tokens=0
+15:43:44,30 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:44,158 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 1.9059999999590218. input_tokens=547, output_tokens=0
+15:43:44,284 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.25. input_tokens=459, output_tokens=0
+15:43:44,319 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.234000000054948. input_tokens=522, output_tokens=0
+15:43:44,414 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.202999999979511. input_tokens=423, output_tokens=0
+15:43:44,514 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:44,677 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:43:44,835 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.687999999965541. input_tokens=394, output_tokens=0
+15:43:45,19 graphrag.llm.base.rate_limiting_llm INFO perf - llm.embedding "Process" with 0 retries took 2.594000000040978. input_tokens=759, output_tokens=0
+15:43:45,79 datashaper.workflow.workflow INFO executing verb drop
+15:43:45,107 datashaper.workflow.workflow INFO executing verb filter
+15:43:45,137 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_entities.parquet
+15:43:45,572 graphrag.index.run INFO Running workflow: create_final_nodes...
+15:43:45,572 graphrag.index.run INFO dependencies for create_final_nodes: ['create_base_entity_graph']
+15:43:45,573 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+15:43:45,614 datashaper.workflow.workflow INFO executing verb layout_graph
+15:43:46,182 datashaper.workflow.workflow INFO executing verb unpack_graph
+15:43:46,328 datashaper.workflow.workflow INFO executing verb unpack_graph
+15:43:46,505 datashaper.workflow.workflow INFO executing verb drop
+15:43:46,527 datashaper.workflow.workflow INFO executing verb filter
+15:43:46,597 datashaper.workflow.workflow INFO executing verb select
+15:43:46,621 datashaper.workflow.workflow INFO executing verb rename
+15:43:46,646 datashaper.workflow.workflow INFO executing verb convert
+15:43:46,724 datashaper.workflow.workflow INFO executing verb join
+15:43:46,767 datashaper.workflow.workflow INFO executing verb rename
+15:43:46,771 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_nodes.parquet
+15:43:47,65 graphrag.index.run INFO Running workflow: create_final_communities...
+15:43:47,65 graphrag.index.run INFO dependencies for create_final_communities: ['create_base_entity_graph']
+15:43:47,66 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+15:43:47,123 datashaper.workflow.workflow INFO executing verb unpack_graph
+15:43:47,321 datashaper.workflow.workflow INFO executing verb unpack_graph
+15:43:47,476 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:43:47,507 datashaper.workflow.workflow INFO executing verb join
+15:43:47,546 datashaper.workflow.workflow INFO executing verb join
+15:43:47,592 datashaper.workflow.workflow INFO executing verb concat
+15:43:47,617 datashaper.workflow.workflow INFO executing verb filter
+15:43:47,905 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:43:47,941 datashaper.workflow.workflow INFO executing verb join
+15:43:47,974 datashaper.workflow.workflow INFO executing verb filter
+15:43:48,30 datashaper.workflow.workflow INFO executing verb fill
+15:43:48,56 datashaper.workflow.workflow INFO executing verb merge
+15:43:48,94 datashaper.workflow.workflow INFO executing verb copy
+15:43:48,118 datashaper.workflow.workflow INFO executing verb select
+15:43:48,122 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_communities.parquet
+15:43:48,374 graphrag.index.run INFO Running workflow: join_text_units_to_entity_ids...
+15:43:48,382 graphrag.index.run INFO dependencies for join_text_units_to_entity_ids: ['create_final_entities']
+15:43:48,383 graphrag.index.run INFO read table from storage: create_final_entities.parquet
+15:43:48,537 datashaper.workflow.workflow INFO executing verb select
+15:43:48,564 datashaper.workflow.workflow INFO executing verb unroll
+15:43:48,595 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:43:48,603 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table join_text_units_to_entity_ids.parquet
+15:43:48,841 graphrag.index.run INFO Running workflow: create_final_relationships...
+15:43:48,841 graphrag.index.run INFO dependencies for create_final_relationships: ['create_base_entity_graph', 'create_final_nodes']
+15:43:48,842 graphrag.index.run INFO read table from storage: create_base_entity_graph.parquet
+15:43:48,851 graphrag.index.run INFO read table from storage: create_final_nodes.parquet
+15:43:48,917 datashaper.workflow.workflow INFO executing verb unpack_graph
+15:43:49,70 datashaper.workflow.workflow INFO executing verb filter
+15:43:49,159 datashaper.workflow.workflow INFO executing verb rename
+15:43:49,189 datashaper.workflow.workflow INFO executing verb filter
+15:43:49,273 datashaper.workflow.workflow INFO executing verb drop
+15:43:49,301 datashaper.workflow.workflow INFO executing verb compute_edge_combined_degree
+15:43:49,334 datashaper.workflow.workflow INFO executing verb convert
+15:43:49,398 datashaper.workflow.workflow INFO executing verb convert
+15:43:49,431 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_relationships.parquet
+15:43:49,695 graphrag.index.run INFO Running workflow: join_text_units_to_relationship_ids...
+15:43:49,695 graphrag.index.run INFO dependencies for join_text_units_to_relationship_ids: ['create_final_relationships']
+15:43:49,696 graphrag.index.run INFO read table from storage: create_final_relationships.parquet
+15:43:49,759 datashaper.workflow.workflow INFO executing verb select
+15:43:49,791 datashaper.workflow.workflow INFO executing verb unroll
+15:43:49,823 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:43:49,859 datashaper.workflow.workflow INFO executing verb select
+15:43:49,862 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table join_text_units_to_relationship_ids.parquet
+15:43:50,99 graphrag.index.run INFO Running workflow: create_final_community_reports...
+15:43:50,99 graphrag.index.run INFO dependencies for create_final_community_reports: ['create_final_relationships', 'create_final_nodes', 'create_final_covariates']
+15:43:50,100 graphrag.index.run INFO read table from storage: create_final_relationships.parquet
+15:43:50,107 graphrag.index.run INFO read table from storage: create_final_nodes.parquet
+15:43:50,116 graphrag.index.run INFO read table from storage: create_final_covariates.parquet
+15:43:50,178 datashaper.workflow.workflow INFO executing verb prepare_community_reports_nodes
+15:43:50,228 datashaper.workflow.workflow INFO executing verb prepare_community_reports_edges
+15:43:50,267 datashaper.workflow.workflow INFO executing verb prepare_community_reports_claims
+15:43:50,299 datashaper.workflow.workflow INFO executing verb restore_community_hierarchy
+15:43:50,337 datashaper.workflow.workflow INFO executing verb prepare_community_reports
+15:43:50,350 graphrag.index.verbs.graph.report.prepare_community_reports INFO Number of nodes at level=2 => 523
+15:43:50,436 graphrag.index.verbs.graph.report.prepare_community_reports INFO Number of nodes at level=1 => 523
+15:43:50,689 graphrag.index.verbs.graph.report.prepare_community_reports INFO Number of nodes at level=0 => 523
+15:43:50,847 datashaper.workflow.workflow INFO executing verb create_community_reports
+15:44:06,213 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:06,214 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.312999999965541. input_tokens=2504, output_tokens=1072
+15:44:06,373 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:06,375 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.469000000040978. input_tokens=2281, output_tokens=1180
+15:44:06,702 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:06,704 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.797000000020489. input_tokens=1731, output_tokens=1231
+15:44:07,300 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:07,301 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 16.42099999997299. input_tokens=1712, output_tokens=1287
+15:44:09,848 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:09,850 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 18.95299999997951. input_tokens=2898, output_tokens=1510
+15:44:13,313 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:13,315 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 22.43700000003446. input_tokens=2618, output_tokens=1267
+15:44:14,822 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:14,824 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 23.92200000002049. input_tokens=1736, output_tokens=925
+15:44:29,529 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:29,531 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 38.65599999995902. input_tokens=3451, output_tokens=1857
+15:44:43,803 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:43,805 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.125. input_tokens=1658, output_tokens=766
+15:44:44,99 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,100 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.452999999979511. input_tokens=1630, output_tokens=869
+15:44:44,231 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,232 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.562000000034459. input_tokens=2360, output_tokens=1217
+15:44:44,477 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,479 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.84299999999348. input_tokens=1634, output_tokens=915
+15:44:44,549 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,551 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.905999999959022. input_tokens=2408, output_tokens=1044
+15:44:44,594 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,596 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.922000000020489. input_tokens=1994, output_tokens=1089
+15:44:44,826 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,827 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.202999999979511. input_tokens=1709, output_tokens=1143
+15:44:44,898 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,899 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.26500000001397. input_tokens=1608, output_tokens=1192
+15:44:44,938 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:44,940 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.297000000020489. input_tokens=1839, output_tokens=1061
+15:44:45,641 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:45,642 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 16.0. input_tokens=1580, output_tokens=1051
+15:44:46,157 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:46,158 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 16.56299999996554. input_tokens=1591, output_tokens=1118
+15:44:46,213 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:46,214 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 16.57799999997951. input_tokens=1827, output_tokens=974
+15:44:46,492 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:46,494 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 16.891000000061467. input_tokens=1817, output_tokens=1106
+15:44:47,538 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:47,540 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 17.875. input_tokens=2021, output_tokens=1118
+15:44:47,584 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:47,586 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 17.968999999924563. input_tokens=1693, output_tokens=1039
+15:44:47,591 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:47,593 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 17.92200000002049. input_tokens=2220, output_tokens=1046
+15:44:48,908 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:48,910 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 19.31299999996554. input_tokens=1737, output_tokens=889
+15:44:49,23 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:49,24 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 19.375. input_tokens=2142, output_tokens=941
+15:44:49,400 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:49,402 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 19.79700000002049. input_tokens=3669, output_tokens=1485
+15:44:52,89 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:52,91 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 22.42200000002049. input_tokens=3120, output_tokens=1814
+15:44:54,760 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:54,761 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 10.954000000027008. input_tokens=2219, output_tokens=1002
+15:44:56,603 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:56,605 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 10.952999999979511. input_tokens=1652, output_tokens=966
+15:44:57,607 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:57,608 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 13.516000000061467. input_tokens=2520, output_tokens=1005
+15:44:58,2 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:58,3 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 13.40700000000652. input_tokens=1634, output_tokens=778
+15:44:58,146 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:58,148 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 28.530999999959022. input_tokens=3501, output_tokens=1428
+15:44:58,501 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:58,502 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 12.297000000020489. input_tokens=2043, output_tokens=921
+15:44:59,668 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:44:59,670 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.718999999924563. input_tokens=1572, output_tokens=806
+15:45:01,261 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:01,263 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 31.67200000002049. input_tokens=1662, output_tokens=1079
+15:45:01,594 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:01,596 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.01500000001397. input_tokens=1688, output_tokens=802
+15:45:01,597 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:01,598 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.0. input_tokens=2262, output_tokens=1119
+15:45:01,938 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:01,940 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 32.32799999997951. input_tokens=1897, output_tokens=1349
+15:45:01,965 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:01,966 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 13.047000000020489. input_tokens=1859, output_tokens=923
+15:45:02,951 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:02,952 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 18.48499999998603. input_tokens=2195, output_tokens=1083
+15:45:03,697 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:03,700 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 17.531000000075437. input_tokens=3127, output_tokens=1135
+15:45:05,822 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:05,824 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 20.92200000002049. input_tokens=2200, output_tokens=1024
+15:45:06,23 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:06,25 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 18.484000000054948. input_tokens=1589, output_tokens=970
+15:45:06,54 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:06,56 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 21.5. input_tokens=3027, output_tokens=1275
+15:45:06,904 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:06,906 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 17.515999999945052. input_tokens=1605, output_tokens=1123
+15:45:10,119 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:10,121 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 23.625. input_tokens=1834, output_tokens=1264
+15:45:11,281 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:11,283 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 27.06299999996554. input_tokens=3360, output_tokens=1631
+15:45:14,294 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:14,296 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 44.70299999997951. input_tokens=6897, output_tokens=1937
+15:45:16,183 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:16,185 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 27.155999999959022. input_tokens=1860, output_tokens=1216
+15:45:16,469 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:16,471 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 31.64000000001397. input_tokens=1738, output_tokens=949
+15:45:25,937 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:25,940 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 56.32799999997951. input_tokens=3879, output_tokens=1692
+15:45:40,840 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:40,842 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 14.827999999979511. input_tokens=2298, output_tokens=1022
+15:45:41,474 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:41,476 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 15.437000000034459. input_tokens=1878, output_tokens=912
+15:45:44,711 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:44,713 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 18.67200000002049. input_tokens=3771, output_tokens=1202
+15:45:48,242 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:48,244 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 22.203000000095926. input_tokens=6780, output_tokens=1449
+15:45:56,514 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:56,516 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 30.48499999998603. input_tokens=3594, output_tokens=1464
+15:45:56,971 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:56,973 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 30.983999999938533. input_tokens=4320, output_tokens=1700
+15:45:57,106 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:45:57,107 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 31.09299999999348. input_tokens=1866, output_tokens=1060
+15:46:01,117 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:46:01,119 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 35.10900000005495. input_tokens=3188, output_tokens=1402
+15:46:19,564 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:46:19,567 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 53.57799999997951. input_tokens=7407, output_tokens=1961
+15:46:27,961 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:46:27,965 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 0 retries took 61.95299999997951. input_tokens=4925, output_tokens=1516
+15:46:28,170 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\nYou are an expert in cultural and literary analysis. You are skilled at examining and interpreting the intricate relationships and societal structures within literary works and their adaptations. You are adept at helping people understand the connections and community dynamics in the context of "Black Myth: Wukong" and the classic tale "Journey to the West."\n\n# Goal\nWrite a comprehensive assessment report of a community taking on the role of a Role: A cultural and literary analyst that is examining the intricate relationships and societal structures within "Black Myth: Wukong" and the classic tale "Journey to the West," given a list of entities that belong to the community as well as their relationships and optional associated claims. The analysis will be used to help readers understand the connections and community dynamics in the context of these works and their adaptations.. The content of this report includes an overview of the community\'s key entities and relationships.\n\n# Report Structure\nThe report should include the following sections:\n- TITLE: community\'s name that represents its key entities - title should be short but specific. When possible, include representative named entities in the title.\n- SUMMARY: An executive summary of the community\'s overall structure, how its entities are related to each other, and significant points associated with its entities.\n- REPORT RATING: A float score between 0-10 that represents the relevance of the text to cultural and literary analysis, thematic interpretation, and understanding of the intricate relationships and societal structures within "Black Myth: Wukong" and "Journey to the West," with 1 being trivial or irrelevant and 10 being highly significant, profound, and impactful to the understanding of the texts and their adaptations.\n- RATING EXPLANATION: Give a single sentence explanation of the rating.\n- DETAILED FINDINGS: A list of 5-10 key insights about the community. Each insight should have a short summary followed by multiple paragraphs of explanatory text grounded according to the grounding rules below. Be comprehensive.\n\nReturn output as a well-formed JSON-formatted string with the following format. Don\'t use any unnecessary escape sequences. The output should be a single JSON object that can be parsed by json.loads.\n    {\n        "title": "<report_title>",\n        "summary": "<executive_summary>",\n        "rating": <threat_severity_rating>,\n        "rating_explanation": "<rating_explanation>"\n        "findings": "[{"summary":"<insight_1_summary>", "explanation": "<insight_1_explanation"}, {"summary":"<insight_2_summary>", "explanation": "<insight_2_explanation"}]"\n    }\n\n# Grounding Rules\nAfter each paragraph, add data record reference if the content of the paragraph was derived from one or more data records. Reference is in the format of [records: <record_source> (<record_id_list>, ...<record_source> (<record_id_list>)]. If there are more than 10 data records, show the top 10 most relevant records.\nEach paragraph should contain multiple sentences of explanation and concrete examples with specific named entities. All paragraphs must have these references at the start and end. Use "NONE" if there are no related roles or records. Everything should be in The primary language of the provided text is **Chinese**..\n\nExample paragraph with references added:\nThis is a paragraph of the output text [records: Entities (1, 2, 3), Claims (2, 5), Relationships (10, 12)]\n\n# Example Input\n-----------\nText:\n\nEntities\n\nid,entity,description\n5,ABILA CITY PARK,Abila City Park is the location of the POK rally\n\nRelationships\n\nid,source,target,description\n37,ABILA CITY PARK,POK RALLY,Abila City Park is the location of the POK rally\n38,ABILA CITY PARK,POK,POK is holding a rally in Abila City Park\n39,ABILA CITY PARK,POKRALLY,The POKRally is taking place at Abila City Park\n40,ABILA CITY PARK,CENTRAL BULLETIN,Central Bulletin is reporting on the POK rally taking place in Abila City Park\n\nOutput:\n{\n    "title": "Abila City Park and POK Rally",\n    "summary": "The community revolves around the Abila City Park, which is the location of the POK rally. The park has relationships with POK, POKRALLY, and Central Bulletin, all\nof which are associated with the rally event.",\n    "rating": 5.0,\n    "rating_explanation": "The impact rating is moderate due to the potential for unrest or conflict during the POK rally.",\n    "findings": [\n        {\n            "summary": "Abila City Park as the central location",\n            "explanation": "Abila City Park is the central entity in this community, serving as the location for the POK rally. This park is the common link between all other\nentities, suggesting its significance in the community. The park\'s association with the rally could potentially lead to issues such as public disorder or conflict, depending on the\nnature of the rally and the reactions it provokes. [records: Entities (5), Relationships (37, 38, 39, 40)]"\n        },\n        {\n            "summary": "POK\'s role in the community",\n            "explanation": "POK is another key entity in this community, being the organizer of the rally at Abila City Park. The nature of POK and its rally could be a potential\nsource of threat, depending on their objectives and the reactions they provoke. The relationship between POK and the park is crucial in understanding the dynamics of this community.\n[records: Relationships (38)]"\n        },\n        {\n            "summary": "POKRALLY as a significant event",\n            "explanation": "The POKRALLY is a significant event taking place at Abila City Park. This event is a key factor in the community\'s dynamics and could be a potential\nsource of threat, depending on the nature of the rally and the reactions it provokes. The relationship between the rally and the park is crucial in understanding the dynamics of this\ncommunity. [records: Relationships (39)]"\n        },\n        {\n            "summary": "Role of Central Bulletin",\n            "explanation": "Central Bulletin is reporting on the POK rally taking place in Abila City Park. This suggests that the event has attracted media attention, which could\namplify its impact on the community. The role of Central Bulletin could be significant in shaping public perception of the event and the entities involved. [records: Relationships\n(40)]"\n        }\n    ]\n\n}\n\n# Real Data\n\nUse the following text for your answer. Do not make anything up in your answer.\n\nText:\n-----Entities-----\nhuman_readable_id,title,description,degree\r\n68,悟空,悟空是孙悟空的简称，他是《西游记》中的主要角色之一，拥有强大的法力和火眼金睛。他负责保护唐僧，并且是唐僧的徒弟之一。,24\r\n26,牛魔王,牛魔王是与孙悟空结拜的兄弟之一，是红孩儿的父亲，行者的结拜兄弟，同时也是罗刹女的丈夫。,7\r\n120,孙行者,孙行者是孙悟空的别称，他是唐僧的徒弟之一，负责保护唐僧。孙行者是孙悟空被赐的法名。,6\r\n145,云栈洞,云栈洞是孙悟空追捕妖怪的地方，也是悟空收八戒的地方。,2\r\n299,斗战胜佛,斗战胜佛是如来佛最后封给孙悟空的佛号。,2\r\n185,红孩儿,红孩儿是一个妖怪，使用三昧真火。,6\r\n223,罗刹女,罗刹女是红孩儿之母、牛魔王之妻，持有芭蕉扇,4\r\n341,唐三藏,唐三藏是《西游记》中的主要角色之一，负责取经。,5\r\n378,孙大圣,孙大圣是孙悟空的尊称，他是唐僧的徒弟之一，负责保护唐僧。他劝善施霖。,5\r\n109,袈裟,幌竿是《西游记》第十六回中提到的宝贝，是观音献给唐王的物品。,2\r\n278,太乙救苦天尊,太乙救苦天尊是九灵元圣的主人，也是道教中的神祇之一。,2\r\n274,郡主,凤仙郡的郡主，当年推倒斋天素供,2\r\n276,豹头山黄狮精,黄狮精是一个妖怪，盗走了仿造的兵器,2\r\n192,三岛求方,三岛求方是悟空为了救活人参果树而去三岛求取方法的事件,1\r\n69,八卦炉,八卦炉是太上老君用来关押悟空的炉子,1\r\n70,金箍棒,金箍棒是悟空的武器，他用它在天宫大闹。金箍棒也是行者仿造的兵器之一。,1\r\n100,铁丸,,1\r\n93,铜汁,铜汁是悟空在五行山下渴饮的饮料,1\r\n162,镇元子大仙,镇元子大仙是万寿山五庄观的主人,1\r\n334,金(山兜)洞,金(山兜)洞是悟空大闹的地方,1\r\n311,黑风山,黑风山是《西游记》第十六回中提到的地方，也是孙行者大闹的地方。,3\r\n273,凤仙郡,凤仙郡是一个地方，曾冒天止雨，三年未雨，灾情严重。,3\r\n179,圣婴大王红孩儿,红孩儿是圣婴大王，牛魔王之子,1\r\n239,牛魔王小妾,牛魔王的小妾是行者找牛借芭蕉扇的地方,1\r\n180,三昧真火,三昧真火是红孩儿用来打败行者的法术。,1\r\n168,尸魔,尸魔是三戏唐三藏的妖怪，欲害三藏的妖怪，初变少女，次变老妇，三变公公。,2\r\n181,善财童子,善财童子是红孩儿被观音收伏后的称号和身份。,1\r\n408,第八十七回,第八十七回的标题是“凤仙郡冒天止雨 孙大圣劝善施霖”,2\r\n222,芭蕉扇,芭蕉扇是可以克服火焰山火的物品，孙行者用来调火焰山火焰的物品。,1\r\n323,鬼王,鬼王是夜谒唐三藏的妖怪,1\r\n238,假扇,假扇是罗刹女借给行者的假芭蕉扇,1\r\n312,熊罴怪,熊罴怪是《西游记》第十七回中提到的妖怪，居住在黑风山，最终被观世音收伏。,2\r\n277,九灵元圣,九灵元圣是黄狮精的祖,2\r\n337,观世音,观世音是佛教中的神祇，负责收伏熊罴怪,2\r\n167,白虎岭,白虎岭是尸魔欲害三藏的地方,1\r\n317,甘泉,甘泉是观世音用来活树的泉水,1\r\n\n\n-----Claims-----\nhuman_readable_id,subject_id,type,status,description\r\n63,悟空,RECOGNITION,TRUE,悟空被封为斗战胜佛\r\n69,孙行者,PLOT DEVELOPMENT,TRUE,孙行者大闹黑风山\r\n82,孙行者,PLOT DEVELOPMENT,TRUE,孙行者大闹五庄观\r\n73,云栈洞,PLOT DEVELOPMENT,TRUE,云栈洞悟空收八戒\r\n89,金(山兜)洞,PLOT DEVELOPMENT,TRUE,悟空大闹金(山兜)洞\r\n68,黑风山,PLOT DEVELOPMENT,TRUE,黑风山怪窃袈裟\r\n\n\n-----Relationships-----\nhuman_readable_id,source,target,description,rank\r\n127,悟空,三藏,悟空是三藏的徒弟之一，负责保护三藏,68\r\n25,孙悟空,牛魔王,孙悟空与牛魔王结拜为兄弟,67\r\n57,孙悟空,孙行者,孙行者是孙悟空被赐的法名,66\r\n60,孙悟空,云栈洞,云栈洞是孙悟空追捕妖怪的地方,62\r\n73,孙悟空,斗战胜佛,如来佛最后封孙悟空为斗战胜佛。,62\r\n226,三藏,红孩儿,红孩儿使用三昧真火困住三藏,50\r\n117,悟空,观音,悟空请来观音救活人参果树,49\r\n120,悟空,八戒,悟空和八戒都是三藏的徒弟，负责保护三藏。悟空收八戒为徒。,41\r\n80,牛魔王,行者,牛魔王是行者的结拜兄弟，行者与牛魔王恶斗。,41\r\n355,行者,罗刹女,行者向罗刹女借芭蕉扇,38\r\n113,悟空,如来,如来将悟空压在五行山下,37\r\n102,老君,悟空,老君将悟空关入八卦炉,33\r\n212,观音,红孩儿,观音收伏红孩儿,31\r\n131,悟空,孙行者,悟空是孙行者的别称,30\r\n91,玉帝,悟空,玉帝命令天神处死悟空,30\r\n130,悟空,唐三藏,悟空是唐三藏的徒弟之一，负责保护唐三藏,29\r\n132,悟空,孙大圣,孙大圣是悟空的别称,29\r\n125,悟空,月宫玉兔,悟空擒伏月宫玉兔,27\r\n201,观音,袈裟,袈裟是观音献给唐王的物品,27\r\n128,悟空,云栈洞,悟空在云栈洞收八戒,26\r\n124,悟空,太乙救苦天尊,悟空请太乙救苦天尊降伏九灵元圣,26\r\n114,悟空,五行山,悟空被压在五行山下,26\r\n121,悟空,南山大王,悟空用瞌睡虫睡倒南山大王,26\r\n122,悟空,郡主,悟空劝郡主归善,26\r\n123,悟空,豹头山黄狮精,悟空知黄狮精盗走兵器,26\r\n126,悟空,斗战胜佛,悟空被封为斗战胜佛,26\r\n119,悟空,三岛求方,悟空为了救活人参果树而去三岛求方,25\r\n111,悟空,八卦炉,悟空被关入八卦炉,25\r\n112,悟空,金箍棒,悟空用金箍棒在天宫大闹,25\r\n115,悟空,铁丸,铁丸是悟空在五行山下饮餐的食物,25\r\n116,悟空,铜汁,铜汁是悟空在五行山下渴饮的饮料,25\r\n118,悟空,镇元子大仙,悟空偷镇元子大仙“人参果”,25\r\n129,悟空,金(山兜)洞,悟空大闹金(山兜)洞,25\r\n436,唐三藏,猪八戒,猪八戒是唐三藏的徒弟之一,15\r\n84,牛魔王,孙行者,孙行者与牛魔王结拜为兄弟,13\r\n81,牛魔王,红孩儿,牛魔王是红孩儿之父,13\r\n267,孙行者,孙大圣,孙大圣是孙行者的别称,11\r\n82,牛魔王,罗刹女,罗刹女是牛魔王之妻,11\r\n437,唐三藏,孙大圣,孙大圣是唐三藏的徒弟之一，负责保护唐三藏,10\r\n371,红孩儿,罗刹女,罗刹女是红孩儿之母,10\r\n265,孙行者,黑风山,孙行者大闹黑风山,9\r\n398,凤仙郡,孙大圣,孙大圣在凤仙郡劝善施霖,8\r\n79,牛魔王,圣婴大王红孩儿,红孩儿是牛魔王之子,8\r\n83,牛魔王,牛魔王小妾,牛魔王的小妾是行者找牛借芭蕉扇的地方,8\r\n340,三昧真火,红孩儿,三昧真火是一种强大的火焰，红孩儿使用三昧真火打败行者。,7\r\n327,尸魔,唐三藏,尸魔三戏唐三藏,7\r\n341,善财童子,红孩儿,红孩儿被观音收伏后成为善财童子,7\r\n446,孙大圣,第八十七回,第八十七回中孙大圣劝善施霖,7\r\n266,孙行者,芭蕉扇,孙行者用芭蕉扇调火焰山火焰,7\r\n425,鬼王,唐三藏,鬼王夜谒唐三藏,6\r\n384,罗刹女,假扇,罗刹女借给行者假扇,5\r\n397,凤仙郡,郡主,郡主是凤仙郡的统治者,5\r\n399,凤仙郡,第八十七回,第八十七回中凤仙郡冒天止雨,5\r\n419,黑风山,熊罴怪,熊罴怪是黑风山的妖怪,5\r\n224,袈裟,黑风山,黑风山怪窃袈裟,5\r\n401,九灵元圣,太乙救苦天尊,九灵元圣是太乙救苦天尊的坐骑,4\r\n400,豹头山黄狮精,九灵元圣,九灵元圣是黄狮精的祖,4\r\n420,熊罴怪,观世音,观世音收伏熊罴怪,4\r\n326,白虎岭,尸魔,尸魔欲害三藏于白虎岭,3\r\n423,甘泉,观世音,观世音用甘泉活树,3\r\n\nOutput:'}
+15:47:12,910 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:47:12,912 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 1 retries took 42.82799999997951. input_tokens=5440, output_tokens=1832
+15:48:27,662 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\nYou are an expert in cultural and literary analysis. You are skilled at examining and interpreting the intricate relationships and societal structures within literary works and their adaptations. You are adept at helping people understand the connections and community dynamics in the context of "Black Myth: Wukong" and the classic tale "Journey to the West."\n\n# Goal\nWrite a comprehensive assessment report of a community taking on the role of a Role: A cultural and literary analyst that is examining the intricate relationships and societal structures within "Black Myth: Wukong" and the classic tale "Journey to the West," given a list of entities that belong to the community as well as their relationships and optional associated claims. The analysis will be used to help readers understand the connections and community dynamics in the context of these works and their adaptations.. The content of this report includes an overview of the community\'s key entities and relationships.\n\n# Report Structure\nThe report should include the following sections:\n- TITLE: community\'s name that represents its key entities - title should be short but specific. When possible, include representative named entities in the title.\n- SUMMARY: An executive summary of the community\'s overall structure, how its entities are related to each other, and significant points associated with its entities.\n- REPORT RATING: A float score between 0-10 that represents the relevance of the text to cultural and literary analysis, thematic interpretation, and understanding of the intricate relationships and societal structures within "Black Myth: Wukong" and "Journey to the West," with 1 being trivial or irrelevant and 10 being highly significant, profound, and impactful to the understanding of the texts and their adaptations.\n- RATING EXPLANATION: Give a single sentence explanation of the rating.\n- DETAILED FINDINGS: A list of 5-10 key insights about the community. Each insight should have a short summary followed by multiple paragraphs of explanatory text grounded according to the grounding rules below. Be comprehensive.\n\nReturn output as a well-formed JSON-formatted string with the following format. Don\'t use any unnecessary escape sequences. The output should be a single JSON object that can be parsed by json.loads.\n    {\n        "title": "<report_title>",\n        "summary": "<executive_summary>",\n        "rating": <threat_severity_rating>,\n        "rating_explanation": "<rating_explanation>"\n        "findings": "[{"summary":"<insight_1_summary>", "explanation": "<insight_1_explanation"}, {"summary":"<insight_2_summary>", "explanation": "<insight_2_explanation"}]"\n    }\n\n# Grounding Rules\nAfter each paragraph, add data record reference if the content of the paragraph was derived from one or more data records. Reference is in the format of [records: <record_source> (<record_id_list>, ...<record_source> (<record_id_list>)]. If there are more than 10 data records, show the top 10 most relevant records.\nEach paragraph should contain multiple sentences of explanation and concrete examples with specific named entities. All paragraphs must have these references at the start and end. Use "NONE" if there are no related roles or records. Everything should be in The primary language of the provided text is **Chinese**..\n\nExample paragraph with references added:\nThis is a paragraph of the output text [records: Entities (1, 2, 3), Claims (2, 5), Relationships (10, 12)]\n\n# Example Input\n-----------\nText:\n\nEntities\n\nid,entity,description\n5,ABILA CITY PARK,Abila City Park is the location of the POK rally\n\nRelationships\n\nid,source,target,description\n37,ABILA CITY PARK,POK RALLY,Abila City Park is the location of the POK rally\n38,ABILA CITY PARK,POK,POK is holding a rally in Abila City Park\n39,ABILA CITY PARK,POKRALLY,The POKRally is taking place at Abila City Park\n40,ABILA CITY PARK,CENTRAL BULLETIN,Central Bulletin is reporting on the POK rally taking place in Abila City Park\n\nOutput:\n{\n    "title": "Abila City Park and POK Rally",\n    "summary": "The community revolves around the Abila City Park, which is the location of the POK rally. The park has relationships with POK, POKRALLY, and Central Bulletin, all\nof which are associated with the rally event.",\n    "rating": 5.0,\n    "rating_explanation": "The impact rating is moderate due to the potential for unrest or conflict during the POK rally.",\n    "findings": [\n        {\n            "summary": "Abila City Park as the central location",\n            "explanation": "Abila City Park is the central entity in this community, serving as the location for the POK rally. This park is the common link between all other\nentities, suggesting its significance in the community. The park\'s association with the rally could potentially lead to issues such as public disorder or conflict, depending on the\nnature of the rally and the reactions it provokes. [records: Entities (5), Relationships (37, 38, 39, 40)]"\n        },\n        {\n            "summary": "POK\'s role in the community",\n            "explanation": "POK is another key entity in this community, being the organizer of the rally at Abila City Park. The nature of POK and its rally could be a potential\nsource of threat, depending on their objectives and the reactions they provoke. The relationship between POK and the park is crucial in understanding the dynamics of this community.\n[records: Relationships (38)]"\n        },\n        {\n            "summary": "POKRALLY as a significant event",\n            "explanation": "The POKRALLY is a significant event taking place at Abila City Park. This event is a key factor in the community\'s dynamics and could be a potential\nsource of threat, depending on the nature of the rally and the reactions it provokes. The relationship between the rally and the park is crucial in understanding the dynamics of this\ncommunity. [records: Relationships (39)]"\n        },\n        {\n            "summary": "Role of Central Bulletin",\n            "explanation": "Central Bulletin is reporting on the POK rally taking place in Abila City Park. This suggests that the event has attracted media attention, which could\namplify its impact on the community. The role of Central Bulletin could be significant in shaping public perception of the event and the entities involved. [records: Relationships\n(40)]"\n        }\n    ]\n\n}\n\n# Real Data\n\nUse the following text for your answer. Do not make anything up in your answer.\n\nText:\n-----Entities-----\nhuman_readable_id,title,description,degree\r\n184,行者,行者是孙悟空的别称，他是唐僧的徒弟之一，负责保护唐僧。,34\r\n19,花果山,花果山位于东胜神洲傲来国海边，是孙悟空的出生地和统治地。花果山不仅是东胜神洲的一座山，也是行者的出生地和统治地，同时也是行者被逐走后回去的地方。,2\r\n147,八戒,八戒是猪八戒的简称，他是唐僧的徒弟之一。八戒是猪悟能的别号，由唐僧所起。,17\r\n205,沙僧,沙僧是唐僧的徒弟之一，原是天宫中卷帘大将，被贬到流沙河为妖，通过观世音菩萨点化成为取经集体中的一员。取经后被封为金身罗汉。沙僧是沙悟净的简称。,13\r\n258,大鹏,大鹏是狮驼岭的妖怪之一,3\r\n252,蜘蛛精,蜘蛛精是盘丝岭的妖怪，唆使多目怪蜈蚣精与三藏师徒作对,3\r\n256,青狮,青狮是狮驼岭的妖怪之一,3\r\n220,六耳猕猴,六耳猕猴是假行者的真实身份,2\r\n267,哪吒,哪吒是中国神话中的神祇，帮助行者降妖，也是道教中的神祇之一。,2\r\n215,女王,女王是西梁女国的统治者，欲招赘三藏,2\r\n259,佛祖,佛祖是佛教中的主要神祇，行者向他求告降伏狮驼岭的妖怪,4\r\n217,蝎子精,蝎子精是毒敌山琵琶洞的妖怪，摄走三藏,4\r\n231,黄眉大王,黄眉大王是一个妖精，善于使用搭包装人。他是小西天的妖怪。,4\r\n203,羊力,羊力是车迟国的三妖之一,3\r\n201,虎力,虎力是车迟国的三妖之一,3\r\n202,鹿力,鹿力是车迟国的三妖之一,3\r\n253,多目怪蜈蚣精,多目怪蜈蚣精是蜘蛛精唆使来与三藏师徒作对的妖怪,2\r\n245,蛇精,蛇精是行者和八戒在驼罗庄杀死的妖怪,2\r\n225,万圣龙王,万圣龙王是祭赛国的妖怪，被行者除灭,1\r\n226,九头驸马,九头驸马是祭赛国的妖怪，被行者除灭,1\r\n161,五庄观,五庄观是万寿山上的道观，也是行者偷人参的地方。,1\r\n219,假行者,假行者是冒充行者行凶并抢走包袱的角色,1\r\n243,各路神兵,各路神兵是行者请来帮助降伏黄眉大王的神兵,1\r\n281,四木禽星,四木禽星是行者请来降灭妖精的神祇,1\r\n254,毗蓝婆,毕蓝婆是佛教中的神祇之一，行者请来收伏多目怪的神祇。,1\r\n197,龙,龙是行者请来帮助救出三藏的生物,1\r\n272,南山大王,南山大王是豹子精，欲吃唐僧肉,2\r\n75,流沙河,流沙河是八戒大战的地方，也是卷帘大将被贬受苦的地方。这里是唐僧收沙悟净为三弟子的地方，同时也是沙僧被贬为妖怪的地方。,3\r\n186,五荤三厌,五荤三厌是八戒自称断了的食物,1\r\n228,竹精,竹精是荆棘岭的妖怪,1\r\n229,树妖,树妖是荆棘岭的妖怪,1\r\n241,钉钯,钉钯是八戒使用的武器,1\r\n300,净坛使者,净坛使者是八戒被封的称号,1\r\n320,国土,国土是八戒转山林的地方,1\r\n301,金身罗汉,金身罗汉是沙僧取经后被封的称号。,1\r\n260,文殊,文殊是佛祖宣来降伏狮驼岭妖怪的菩萨之一,2\r\n233,司磐童儿,司磐童儿是佛前的童儿，原来是黄眉大王。司磐童儿的真实身份是黄眉大王。,1\r\n232,弥勒佛,弥勒佛是佛教中的主要神祇之一，帮助行者降伏黄眉大王。,1\r\n242,搭包装人,搭包装人是黄眉大王善使的法术,1\r\n218,昴宿,昴宿是行者请来灭蝎子精的神,1\r\n236,毒敌山,毒敌山是蝎子精所居之地,1\r\n237,琵琶洞,琵琶洞是蝎子精所居之地,1\r\n\n\n-----Claims-----\nhuman_readable_id,subject_id,type,status,description\r\n83,花果山,PLOT DEVELOPMENT,TRUE,花果山群妖聚义\r\n64,八戒,RECOGNITION,TRUE,八戒被封为净坛使者\r\n50,行者,DEFEAT,TRUE,行者与牛魔王恶斗并败之\r\n65,沙僧,RECOGNITION,TRUE,沙僧被封为金身罗汉\r\n111,沙僧,REDEMPTION,TRUE,沙僧念念不忘赎罪，取经信念较为坚定。\r\n112,沙僧,CONTRIBUTION,TRUE,沙僧在取经集体中最大的贡献是调和唐僧、孙悟空、猪八戒三人有意见纷争时的矛盾。\r\n113,沙僧,CONTRIBUTION,TRUE,沙僧在取经后重返西天，如来封他为金身罗汉。\r\n80,五庄观,PLOT DEVELOPMENT,TRUE,五庄观行者窃人参\r\n77,流沙河,PLOT DEVELOPMENT,TRUE,八戒大战流沙河\r\n\n\n-----Relationships-----\nhuman_readable_id,source,target,description,rank\r\n231,三藏,行者,行者是三藏的徒弟之一，负责保护三藏,78\r\n18,花果山,孙悟空,孙悟空是花果山的一块仙石迸裂成的天产石猴，并在花果山被众猴推举为水帘洞主。,62\r\n249,三藏,八戒,八戒是三藏的徒弟之一,61\r\n250,三藏,沙僧,沙僧是三藏的徒弟之一,57\r\n304,八戒,行者,行者和八戒都是三藏的徒弟，负责保护三藏,51\r\n284,唐僧,八戒,唐僧为猪悟能起别号八戒,48\r\n235,三藏,大鹏,三藏在狮驼岭遇到大鹏遭灾,47\r\n348,行者,沙僧,行者和沙僧都是三藏的徒弟，负责保护三藏,47\r\n232,三藏,蜘蛛精,三藏在盘丝岭遇到蜘蛛精遭难,47\r\n233,三藏,青狮,三藏在狮驼岭遇到青狮遭灾,47\r\n230,三藏,六耳猕猴,六耳猕猴冒充行者行凶并抢走包袱,46\r\n236,三藏,哪吒,哪吒帮助行者降妖,46\r\n229,三藏,女王,女王欲招赘三藏,46\r\n299,唐僧,沙僧,沙僧是唐僧的徒弟之一。,44\r\n120,悟空,八戒,悟空和八戒都是三藏的徒弟，负责保护三藏。悟空收八戒为徒。,41\r\n80,牛魔王,行者,牛魔王是行者的结拜兄弟，行者与牛魔王恶斗。,41\r\n89,龙王,行者,行者请来龙王收伏小鼍龙,40\r\n332,国王,行者,行者为朱紫国国王医病,39\r\n368,行者,佛祖,行者向佛祖求告降伏狮驼岭的妖怪,38\r\n352,行者,蝎子精,蝎子精摄走三藏，行者请来昴宿灭之,38\r\n355,行者,罗刹女,行者向罗刹女借芭蕉扇,38\r\n358,行者,黄眉大王,行者请来各路神兵对抗黄眉大王，行者请来各路神兵降伏黄眉大王。,38\r\n367,行者,大鹏,行者在狮驼岭与大鹏苦斗,37\r\n347,行者,羊力,行者在车迟国与羊力斗法并胜之,37\r\n345,行者,虎力,行者在车迟国与虎力斗法并胜之,37\r\n362,行者,蜘蛛精,行者打死蜘蛛精,37\r\n346,行者,鹿力,行者在车迟国与鹿力斗法并胜之,37\r\n349,行者,金鱼,金鱼把唐僧摄入水府，行者请来观音收伏金鱼,37\r\n365,行者,青狮,行者在狮驼岭与青狮苦斗,37\r\n366,行者,白象,行者在狮驼岭与白象苦斗,37\r\n354,行者,六耳猕猴,假行者的真实身份是六耳猕猴,36\r\n370,行者,哪吒,哪吒帮助行者降妖,36\r\n364,行者,多目怪蜈蚣精,行者请来毗蓝婆收伏多目怪,36\r\n351,行者,女王,行者设计让三藏走脱女王,36\r\n17,花果山,行者,行者被逐走后回到花果山,36\r\n360,行者,蛇精,行者和八戒在驼罗庄杀死蛇精,36\r\n350,行者,独角兕大王,行者几经恶斗独角兕大王,36\r\n361,行者,金圣宫,行者救回被赛太岁劫走的金圣宫,36\r\n356,行者,万圣龙王,行者为祭赛国国王除灭万圣龙王,35\r\n357,行者,九头驸马,行者为祭赛国国王除灭九头驸马,35\r\n324,五庄观,行者,行者在五庄观窃人参,35\r\n353,行者,假行者,行者与假行者恶斗,35\r\n359,行者,各路神兵,行者请来各路神兵帮助降伏黄眉大王,35\r\n369,行者,四木禽星,四木禽星帮助行者降灭妖精,35\r\n363,行者,毗蓝婆,行者请来毗蓝婆收伏多目怪,35\r\n344,行者,龙,行者请来龙帮助救出三藏,35\r\n305,八戒,沙僧,八戒和沙僧都是三藏的徒弟，负责保护三藏,30\r\n121,悟空,南山大王,悟空用瞌睡虫睡倒南山大王,26\r\n141,如来,沙僧,如来在取经后封沙僧为金身罗汉。,26\r\n301,八戒,虎力,八戒在车迟国与虎力斗法并胜之,20\r\n302,八戒,鹿力,八戒在车迟国与鹿力斗法并胜之,20\r\n303,八戒,羊力,八戒在车迟国与羊力斗法并胜之,20\r\n145,流沙河,八戒,八戒在流沙河大战,20\r\n309,八戒,蛇精,八戒和行者在驼罗庄杀死蛇精,19\r\n310,八戒,南山大王,八戒将南山大王打死,19\r\n93,玉帝,沙僧,玉帝赐给沙僧降妖宝杖。,19\r\n300,八戒,五荤三厌,八戒自称断了五荤三厌,18\r\n306,八戒,竹精,八戒一顿钉钯筑翻妖树,18\r\n307,八戒,树妖,八戒一顿钉钯筑翻妖树,18\r\n308,八戒,钉钯,八戒使用钉钯作为武器,18\r\n311,八戒,净坛使者,八戒被封为净坛使者,18\r\n312,八戒,国土,八戒在国土转山林,18\r\n379,沙僧,观世音菩萨,观世音菩萨点化沙僧，使其成为取经集体中的一员。,16\r\n144,卷帘大将,沙僧,沙僧原是天宫中的卷帘大将。,16\r\n146,流沙河,沙僧,沙僧被贬到流沙河为妖。,16\r\n374,虎力,沙僧,沙僧在车迟国与虎力斗法并胜之,16\r\n375,鹿力,沙僧,沙僧在车迟国与鹿力斗法并胜之,16\r\n376,羊力,沙僧,沙僧在车迟国与羊力斗法并胜之,16\r\n378,沙僧,金身罗汉,沙僧在取经后被封为金身罗汉。,14\r\n318,普贤,佛祖,佛祖宣普贤降伏狮驼岭的妖怪,8\r\n392,大鹏,佛祖,佛祖迫使大鹏皈依,7\r\n393,佛祖,文殊,佛祖宣文殊降伏狮驼岭的妖怪,6\r\n142,卷帘大将,流沙河,卷帘大将在流沙河受苦,6\r\n386,黄眉大王,司磐童儿,黄眉大王的真实身份是佛前司磐童儿,5\r\n390,蜘蛛精,多目怪蜈蚣精,蜘蛛精唆使多目怪蜈蚣精与三藏师徒作对,5\r\n385,黄眉大王,弥勒佛,弥勒佛帮助行者降伏黄眉大王,5\r\n387,黄眉大王,搭包装人,黄眉大王善使搭包装人,5\r\n391,青狮,文殊,青狮是文殊的坐骑,5\r\n381,蝎子精,昴宿,昴宿灭蝎子精,5\r\n382,蝎子精,毒敌山,蝎子精居住在毒敌山,5\r\n383,蝎子精,琵琶洞,蝎子精居住在琵琶洞,5\r\n\nOutput:'}
+15:48:34,241 graphrag.index.reporting.file_workflow_callbacks INFO Error Invoking LLM details={'input': '\nYou are an expert in cultural and literary analysis. You are skilled at examining and interpreting the intricate relationships and societal structures within literary works and their adaptations. You are adept at helping people understand the connections and community dynamics in the context of "Black Myth: Wukong" and the classic tale "Journey to the West."\n\n# Goal\nWrite a comprehensive assessment report of a community taking on the role of a Role: A cultural and literary analyst that is examining the intricate relationships and societal structures within "Black Myth: Wukong" and the classic tale "Journey to the West," given a list of entities that belong to the community as well as their relationships and optional associated claims. The analysis will be used to help readers understand the connections and community dynamics in the context of these works and their adaptations.. The content of this report includes an overview of the community\'s key entities and relationships.\n\n# Report Structure\nThe report should include the following sections:\n- TITLE: community\'s name that represents its key entities - title should be short but specific. When possible, include representative named entities in the title.\n- SUMMARY: An executive summary of the community\'s overall structure, how its entities are related to each other, and significant points associated with its entities.\n- REPORT RATING: A float score between 0-10 that represents the relevance of the text to cultural and literary analysis, thematic interpretation, and understanding of the intricate relationships and societal structures within "Black Myth: Wukong" and "Journey to the West," with 1 being trivial or irrelevant and 10 being highly significant, profound, and impactful to the understanding of the texts and their adaptations.\n- RATING EXPLANATION: Give a single sentence explanation of the rating.\n- DETAILED FINDINGS: A list of 5-10 key insights about the community. Each insight should have a short summary followed by multiple paragraphs of explanatory text grounded according to the grounding rules below. Be comprehensive.\n\nReturn output as a well-formed JSON-formatted string with the following format. Don\'t use any unnecessary escape sequences. The output should be a single JSON object that can be parsed by json.loads.\n    {\n        "title": "<report_title>",\n        "summary": "<executive_summary>",\n        "rating": <threat_severity_rating>,\n        "rating_explanation": "<rating_explanation>"\n        "findings": "[{"summary":"<insight_1_summary>", "explanation": "<insight_1_explanation"}, {"summary":"<insight_2_summary>", "explanation": "<insight_2_explanation"}]"\n    }\n\n# Grounding Rules\nAfter each paragraph, add data record reference if the content of the paragraph was derived from one or more data records. Reference is in the format of [records: <record_source> (<record_id_list>, ...<record_source> (<record_id_list>)]. If there are more than 10 data records, show the top 10 most relevant records.\nEach paragraph should contain multiple sentences of explanation and concrete examples with specific named entities. All paragraphs must have these references at the start and end. Use "NONE" if there are no related roles or records. Everything should be in The primary language of the provided text is **Chinese**..\n\nExample paragraph with references added:\nThis is a paragraph of the output text [records: Entities (1, 2, 3), Claims (2, 5), Relationships (10, 12)]\n\n# Example Input\n-----------\nText:\n\nEntities\n\nid,entity,description\n5,ABILA CITY PARK,Abila City Park is the location of the POK rally\n\nRelationships\n\nid,source,target,description\n37,ABILA CITY PARK,POK RALLY,Abila City Park is the location of the POK rally\n38,ABILA CITY PARK,POK,POK is holding a rally in Abila City Park\n39,ABILA CITY PARK,POKRALLY,The POKRally is taking place at Abila City Park\n40,ABILA CITY PARK,CENTRAL BULLETIN,Central Bulletin is reporting on the POK rally taking place in Abila City Park\n\nOutput:\n{\n    "title": "Abila City Park and POK Rally",\n    "summary": "The community revolves around the Abila City Park, which is the location of the POK rally. The park has relationships with POK, POKRALLY, and Central Bulletin, all\nof which are associated with the rally event.",\n    "rating": 5.0,\n    "rating_explanation": "The impact rating is moderate due to the potential for unrest or conflict during the POK rally.",\n    "findings": [\n        {\n            "summary": "Abila City Park as the central location",\n            "explanation": "Abila City Park is the central entity in this community, serving as the location for the POK rally. This park is the common link between all other\nentities, suggesting its significance in the community. The park\'s association with the rally could potentially lead to issues such as public disorder or conflict, depending on the\nnature of the rally and the reactions it provokes. [records: Entities (5), Relationships (37, 38, 39, 40)]"\n        },\n        {\n            "summary": "POK\'s role in the community",\n            "explanation": "POK is another key entity in this community, being the organizer of the rally at Abila City Park. The nature of POK and its rally could be a potential\nsource of threat, depending on their objectives and the reactions they provoke. The relationship between POK and the park is crucial in understanding the dynamics of this community.\n[records: Relationships (38)]"\n        },\n        {\n            "summary": "POKRALLY as a significant event",\n            "explanation": "The POKRALLY is a significant event taking place at Abila City Park. This event is a key factor in the community\'s dynamics and could be a potential\nsource of threat, depending on the nature of the rally and the reactions it provokes. The relationship between the rally and the park is crucial in understanding the dynamics of this\ncommunity. [records: Relationships (39)]"\n        },\n        {\n            "summary": "Role of Central Bulletin",\n            "explanation": "Central Bulletin is reporting on the POK rally taking place in Abila City Park. This suggests that the event has attracted media attention, which could\namplify its impact on the community. The role of Central Bulletin could be significant in shaping public perception of the event and the entities involved. [records: Relationships\n(40)]"\n        }\n    ]\n\n}\n\n# Real Data\n\nUse the following text for your answer. Do not make anything up in your answer.\n\nText:\n-----Entities-----\nhuman_readable_id,title,description,degree\r\n45,二郎神,二郎神是与孙悟空大战的神，也是道教中的神祇之一。,2\r\n94,东土,东土是三藏师徒的出发地和返回地，也是唐僧师徒的故乡，同时还是观音菩萨去取经人的地方。,4\r\n44,观音菩萨,观音菩萨是佛教中的神祇之一，她奉如来之命去东土觅取经人，同时也是佛教中的菩萨之一。此外，观音菩萨还被推荐为二郎神的助战神。,5\r\n80,西海龙王之子,西海龙王之子是因犯法被玉帝饶恕后送于深涧中，等待取经人来作脚力,2\r\n421,第一百回,第一百回的标题是“径回东土 五圣成真”,2\r\n73,木叉行者,木叉行者是观音菩萨的随从，陪同她一起去东土寻取经人,1\r\n393,五圣,五圣是五位成真的神祇,2\r\n407,成真,,1\r\n98,深涧,深涧是西海龙王之子被送去等待取经人来作脚力的地方,1\r\n\n\n-----Claims-----\nhuman_readable_id,subject_id,type,status,description\r\n21,西海龙王之子,PARDON,TRUE,观音请玉帝饶恕犯法的西海龙王之子，将其送于深涧中，只等取经人来，为取经人作个脚力。\r\n\n\n-----Relationships-----\nhuman_readable_id,source,target,description,rank\r\n34,孙悟空,二郎神,孙悟空与二郎神大战,62\r\n187,东土,三藏,三藏师徒从东土出发并返回东土,48\r\n188,东土,唐僧,东土是唐僧师徒的故乡,35\r\n97,观音菩萨,如来,如来命令观音菩萨去东土觅取经人,18\r\n100,观音菩萨,东土,观音菩萨去东土觅取经人,9\r\n96,观音菩萨,二郎神,观音菩萨推荐二郎神助战孙悟空,7\r\n99,观音菩萨,西海龙王之子,观音菩萨请玉帝饶恕西海龙王之子,7\r\n189,东土,第一百回,第一百回中径回东土,6\r\n98,观音菩萨,木叉行者,木叉行者陪同观音菩萨一起去东土寻取经人,6\r\n469,五圣,第一百回,第一百回中五圣成真,4\r\n468,五圣,成真,五圣成真,3\r\n161,西海龙王之子,深涧,西海龙王之子被送于深涧中,3\r\n\nOutput:'}
+15:48:58,993 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:48:58,994 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 1 retries took 23.438000000081956. input_tokens=2308, output_tokens=997
+15:49:11,218 httpx INFO HTTP Request: POST https://api.nlp.dev.uptimize.merckgroup.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-09-01-preview "HTTP/1.1 200 OK"
+15:49:11,219 graphrag.llm.base.rate_limiting_llm INFO perf - llm.chat "create_community_report" with 1 retries took 41.81299999996554. input_tokens=6456, output_tokens=2096
+15:49:11,270 datashaper.workflow.workflow INFO executing verb window
+15:49:11,273 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_community_reports.parquet
+15:49:11,546 graphrag.index.run INFO Running workflow: create_final_text_units...
+15:49:11,546 graphrag.index.run INFO dependencies for create_final_text_units: ['join_text_units_to_entity_ids', 'join_text_units_to_relationship_ids', 'create_base_text_units', 'join_text_units_to_covariate_ids']
+15:49:11,547 graphrag.index.run INFO read table from storage: join_text_units_to_entity_ids.parquet
+15:49:11,554 graphrag.index.run INFO read table from storage: join_text_units_to_relationship_ids.parquet
+15:49:11,560 graphrag.index.run INFO read table from storage: create_base_text_units.parquet
+15:49:11,567 graphrag.index.run INFO read table from storage: join_text_units_to_covariate_ids.parquet
+15:49:11,635 datashaper.workflow.workflow INFO executing verb select
+15:49:11,669 datashaper.workflow.workflow INFO executing verb rename
+15:49:11,701 datashaper.workflow.workflow INFO executing verb join
+15:49:11,739 datashaper.workflow.workflow INFO executing verb join
+15:49:11,824 datashaper.workflow.workflow INFO executing verb join
+15:49:11,862 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:49:11,901 datashaper.workflow.workflow INFO executing verb select
+15:49:11,905 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_text_units.parquet
+15:49:12,155 graphrag.index.run INFO Running workflow: create_base_documents...
+15:49:12,155 graphrag.index.run INFO dependencies for create_base_documents: ['create_final_text_units']
+15:49:12,156 graphrag.index.run INFO read table from storage: create_final_text_units.parquet
+15:49:12,246 datashaper.workflow.workflow INFO executing verb unroll
+15:49:12,294 datashaper.workflow.workflow INFO executing verb select
+15:49:12,333 datashaper.workflow.workflow INFO executing verb rename
+15:49:12,372 datashaper.workflow.workflow INFO executing verb join
+15:49:12,414 datashaper.workflow.workflow INFO executing verb aggregate_override
+15:49:12,456 datashaper.workflow.workflow INFO executing verb join
+15:49:12,501 datashaper.workflow.workflow INFO executing verb rename
+15:49:12,538 datashaper.workflow.workflow INFO executing verb convert
+15:49:12,670 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_base_documents.parquet
+15:49:12,969 graphrag.index.run INFO Running workflow: create_final_documents...
+15:49:12,985 graphrag.index.run INFO dependencies for create_final_documents: ['create_base_documents']
+15:49:12,989 graphrag.index.run INFO read table from storage: create_base_documents.parquet
+15:49:13,64 datashaper.workflow.workflow INFO executing verb rename
+15:49:13,68 graphrag.index.emit.parquet_table_emitter INFO emitting parquet table create_final_documents.parquet
